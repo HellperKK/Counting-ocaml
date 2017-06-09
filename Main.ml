@@ -90,6 +90,3 @@ let robot_counter = {
 	}
 	
 let counter_seven = robot_activate robot_counter
-
-(* Counter 8 *)
-let _ = print_endline "Counter 8 !"
