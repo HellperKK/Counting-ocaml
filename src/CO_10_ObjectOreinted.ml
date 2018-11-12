@@ -1,6 +1,5 @@
 let compteur maxi =
   object(self)
-  val max = maxi
   method say x = if x <= maxi
     then let _ = print_endline (string_of_int x) in self#say (x+1)
   method count = self#say 1
