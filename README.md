@@ -15,6 +15,6 @@ Source files are in the src folder.
 The best way to contribute is to add your own file into the src folder following
 the template `CO_Anumber_FileName.ml`
 
-Why do so ?
+Why do so?
 
-Because it's fun !
+Because it's fun!
