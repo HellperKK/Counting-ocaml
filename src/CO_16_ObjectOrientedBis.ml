@@ -7,7 +7,7 @@ class counter =
       self#print;
       self#increment;
     done
-  end;;
+  end
 
 let counter_sixteen = new counter;;
 counter_sixteen#count_utpo 10
