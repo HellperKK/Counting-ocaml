@@ -5,18 +5,18 @@ module type Countable = sig
   val print: t -> unit
 end
 
-module Make_counter (M : Countable) =
-struct
+module Make_counter (M : Countable) = (struct
   let count_upto min max =
-    let rec aux i = if (M.compare i max) == -1
+    let rec aux i = if (M.compare i max) < 1
       then let _ = M.print i in aux (M.succ i)
-end
+    in aux min
+end)
 
 module Counter = Make_counter (struct
   type t = int
   let succ = succ
   let compare = Int.compare
-  let print = fun i -> x |> string_of_int |> print_endline
+  let print = fun i -> (i |> string_of_int |> print_endline)
 end)
 
 let counter_nineteen = Counter.count_upto 1 10
