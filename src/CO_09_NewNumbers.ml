@@ -4,7 +4,7 @@ type digit = Zero | One | Two | Three | Four | Five | Six | Seven | Eight | Nine
 type change = 
 	|Changed of digit
 	|Beyond
-	
+
 type number = digit list
 
 let next_digit = function
@@ -18,7 +18,7 @@ let next_digit = function
 	|Seven -> Changed Eight
 	|Eight -> Changed Nine
 	|Nine-> Beyond
-	
+
 let increment number =
 	let rec aux acc adding = function
 		|[] when adding -> One :: acc
@@ -29,7 +29,7 @@ let increment number =
 			end
 		|hd :: tl -> aux (hd :: acc) false tl
 	in List.rev (aux [] true number)
-	
+
 let string_of_digit = function
 	|Zero -> "0"
 	|One -> "1"
@@ -41,7 +41,7 @@ let string_of_digit = function
 	|Seven -> "7"
 	|Eight -> "8"
 	|Nine-> "9"
-	
+
 let string_of_number number = number |> List.rev |> (List.map string_of_digit) |> (String.concat "")
 
 let count_upto_number max =
@@ -49,5 +49,5 @@ let count_upto_number max =
 		|x when x = (increment max)-> ()
 		|x -> let _ = print_endline (string_of_number x) in aux (increment x)
 	in aux [One]
-	
+
 let counter_one = count_upto_number [Zero; One]

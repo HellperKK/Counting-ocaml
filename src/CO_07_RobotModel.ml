@@ -16,5 +16,5 @@ let robot_counter = {
 	yielder = (function x -> print_endline (string_of_int x.value));
 	stop = (function x -> x.value > 10)
 	}
-	
+
 let counter_seven = robot_activate robot_counter
